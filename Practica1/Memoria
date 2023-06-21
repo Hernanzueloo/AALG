@@ -1,0 +1,145 @@
+Análisis de Algoritmos 2022/2023
+ 
+
+
+Práctica 1
+ 
+
+
+
+Alejandro García Hernando, Diego Rodríguez Ortiz, Grupo 120
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1. Introducción.
+En esta práctica hemos comprobado de manera experimental lo visto en clase. Para ello, hemos diseñado un programa que implementa distintos algoritmos de ordenación vistos en clase y mide el tiempo empleado por el mismo en función del tamaño de la entrada. Para ello recurrimos a los conocimientos obtenidos en la clase de teoría e hicimos una serie de aproximaciones teóricas para estimar los resultados que nuestro código iba a proporcionar.
+2. Objetivos
+Aquí indicáis el trabajo que vais a realizar en cada apartado.
+
+2.1 Apartado 1
+Objetivos del apartado 1.
+En este primer apartado desarrollamos una función que genere números enteros aleatorio entre 2 parámetros de forma equiprobable. Además, también hemos comparado dos funciones de generación y visto porque tan sólo una de ellas es equiprobable.
+ 
+Lo comprobamos en el fichero exercise1.c y generamos un histograma para comprobar la equiprobabilidad.
+
+2.2 Apartado 2
+Objetivos del apartado 2.
+Crear una función, que dada una lista de números, genera una permutación aleatoria de manera equiprobable. Para esta parte es esencial asegurar la equiprobabilidad de las permutaciones obtenidas, porque si no se hace adecuadamente los datos obtenidos a lo largo de la práctica serán erróneos.
+
+2.3 Apartado 3
+Objetivos del apartado 3.
+Hacer una función, que dado el número de elementos y el número de permutaciones deseadas, genera un conjunto de permutaciones aleatorias equiprobables.
+
+2.4 Apartado 4
+Objetivos del apartado 4.
+Medir experimentalmente mediante la ordenación de un gran número de permutaciones de distintos tamaños las características del algoritmo SelectSort. En este apartado se obtendrá el tiempo medio de ejecucion, el máximo, medio y menor número de veces que se ejecutan la operación básica del algoritmo. Esto nos permite comparar las diferencias de estas propiedades en función del tamaño de la permutación proporcionada, y compararlo con el resultado teórico
+
+2.5 Apartado 5
+Objetivos del apartado 5.
+Ser capaces de medir el tiempo medio de ejecucion de una función de ordenación y el numero máximo, medio y mínimo de veces que se ejecuta la OB, dependiendo de los distintos tamaños de listas a ordenar. Y ver que tanto el tiempo medio como el número medio operaciones básicas ejecutadas asciende con el cuadrado de la longitud de las permutaciones proporcionadas.
+
+2.6 Apartado 6
+Objetivos del apartado 6
+Usando todas las herramientas desarrolladas anteriormente compararemos la eficiencia de los algoritmos SelectSort y SelectSortInv. Dado que el algoritmo es muy similar, debemos comprobar si las pequeñas diferencias afectan significativamente al coste de ejecución.
+
+3. Herramientas y metodología
+Cómo ambos tenemos ordenadores Windows, hemos decidido programar en Visual Code y ejecutar nuestros programas en Ubuntu. Además, para realizar las gráficas hemos empleado gnuplot y hemos comprobado que no haya fugas de memoria con Valgrind.
+Aquí ponéis qué entorno de desarrollo (Windows, Linux, MacOS) y herramientas habéis utilizado (Netbeans, Visual Studio, Eclipse, gcc, Valgrind, Gnuplot, Sort, uniq, etc) y qué metodologías de desarrollo y soluciones al problema planteado habéis empleado en cada apartado. Así como las pruebas que habéis realizado a los programas desarrollados.
+
+3.1 Apartado 1
+Metodología y solución adoptada del apartado 1
+Para obtener la función generador de números aleatorios nos hemos basado en el procedimiento descrito en el capítulo 7 del libro "Numerical recipes in C". Creemos que es una gran elección pues genera número enteros entre dos valores de forma equiprobable; a diferencia de otros programas, que pueden tener pequeñas variaciones de probabilidad que comprometan la efectividad del código.
+
+3.2 Apartado 2
+Metodología y solución adoptada del apartado 2
+Para este apartado nos fue muy útil el pseudocódigo proporcionado en la documentación de la práctica. Para generar la permutación añadimos la función definida en el apartado anterior, de este modo nos asegurábamos la aleatoriedad del proceso, lo cual es esencial para el correcto funcionamiento del mismo.
+Con todo esto, comprobamos que todo funciona adecuadamente con el fichero exercise2.c
+
+3.3 Apartado 3
+Metodología y solución adoptada del apartado 3
+Nos limitamos a definir una tabla que fuese capaz de almacenar el conjunto de permutaciones deseado y las generamos gracias al código desarrollado para el apartado 2.
+Comprobamos con el fichero exercise3.c que el conjunto de las permutaciones resultantes eran generadas equiprobablemente, demostrando de este modo que la función del apartado anterior también lo hacía.
+
+3.4 Apartado 4
+Metodología y solución adoptada del apartado 4
+Para hacer la función de ordenación nos basamos en las diapositivas facilitadas por la rama teórica, dónde aparece el pseudocódigo de la misma. Además, creamos la función auxiliar min.
+Este código nos permitió obtener el número de operaciones básicas realizadas para ordenar cada array.
+3.5 Apartado 5
+Metodología y solución adoptada del apartado 5
+En primer lugar incluimos la estructura proporcionada en la documentación a los archivos , e implementamos las 3 funciones indicadas. Sumado al código generado en los ejercicios anteriores que nos facilito enormemente la tarea.
+En último lugar, añadimos la función clock no sin antes consultar diversa documentación acerca de ella, y comprobamos que el programa funcionaba correctamente con el fichero exercise5.c.
+3.6 Apartado 6
+Metodología y solución adoptada del apartado 6
+Para realizar la función SelectSortInv empleamos un algoritmo muy similar al proporcionado en clase sobre el SelectSort. El cambio principal de esta nueva implementación es empezar por el límite superior en lugar del inferior.
+
+4. Código fuente
+Aquí ponéis el código fuente exclusivamente de las rutinas que habéis desarrollado vosotros en cada apartado.
+4.1 Apartado 1
+4.2 Apartado 2
+4.3 Apartado 3
+4.4 Apartado 4
+4.5 Apartado 5
+4.6 Apartado 6
+
+5. Resultados, Gráficas
+Aquí ponis los resultados obtenidos en cada apartado, incluyendo las posibles gráficas.
+
+5.1 Apartado 1
+Resultados del apartado 1.
+Gráfica del histograma de números aleatorios, comentarios a la gráfica
+5.2 Apartado 2	
+Resultados del apartado 2.
+5.3 Apartado 3
+Resultados del apartado 3.
+5.4 Apartado 4
+Resultados del apartado 4.
+5.5 Apartado 5
+Resultados del apartado 5.
+Gráfica comparando los tiempos mejor, peor y medio en OBs para SelectSort, comentarios a la gráfica.
+Gráfica con el tiempo medio de reloj para SelectSort, comentarios a la gráfica.
+5.6 Apartado 6
+Resultados del apartado 6.
+Gráfica comparando el tiempo medio de OBs para SelectSort y SelectSortInv, comentarios a la gráfica.
+Gráfica comparando el tiempo medio de reloj para SelectSort y SelectSortInv, comentarios a la gráfica.
+
+
+6. Respuesta a las preguntas teóricas.
+
+Aquí respondéis a las preguntas teóricas que se os han planteado en la práctica.
+6.1 Pregunta 1
+Se basa en la idea de que la función rand() devuelve un valor entre 0 y RAND_MAX, al dividirlo entre RAND_MAX+1 situamos el valor entre 0 y 1. Por último, lo situamos en el rango deseado multiplicándolo por sup - inf + 1.
+Esta función la hemos definido basándonos en procedimiento descrito en el capítulo 7 del libro "Numerical recipes in C".
+Otra función para generar números aleatorios es la siguiente:
+int aleat_num(int inf, int sup)
+{
+    if (inf > sup){
+        
+        return -1;
+    }
+        
+    return inf + (int) rand() % (sup - inf + 1.0);
+}
+En este código la función rand() devuelve un número entre 0 y RAND_MAX. Posteriormente calcula el su módulo en base (sup - inf + 1.0) y para situarlo en el rango deseado le sumamos el ínfimo.
+
+6.2 Pregunta 2
+El Select Sort ordena el array colocando el número más pequeño de los elementos restantes en el extremo izquierdo. Es decir, busca el mínimo del array y lo coloca a la izquierda, después busca el segundo elemento más pequeño y lo coloca inmediatamente después, y así sucesivamente hasta colocar todos los elementos en su lugar.
+6.3 Pregunta 3
+No es necesario que el bucle actúe sobre el último elemento de la tabla pues cuando el bucle analiza actúa sobre el penúltimo elemento de la misma tan solo quedan los 2 elementos más grandes del conjunto. En este momento coloca a la derecha de la tabla en máximo y a su izquierda el segundo más grande, quedando de este modo ordenada sin necesidad de que el bucle actúe sobre el último elemento.
+6.4 Pregunta 4
+La operación básica del Select Sort es if (array[min] > array[i]), contenida en la función min. Esto se debe a que está en el bucle más interno del algoritmo y es la que más veces se repite. Además, es muy representativa de los algoritmos que resuelven este tipo de problemas, pues todos deben comparar dos elementos.
+6.5 Pregunta 5
+6.5 Pregunta 6
+7. Conclusiones finales.
+Discusión final sobre la práctica y los resultados obtenidos.
+

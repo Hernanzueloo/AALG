@@ -1,0 +1,8 @@
+set title "Equiprobabilidad de nuestra propuesta de random"
+set xlabel "Numero"
+set ylabel "Tiempo"
+set xrange [0:10001]
+set yrange [0:12000]
+set term jpeg
+set output "MergeSortTime.jpeg"
+plot "Merge_plot.txt" using 1:2 title "Tiempo" with l
